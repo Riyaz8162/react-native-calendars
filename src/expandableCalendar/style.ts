@@ -105,12 +105,12 @@ export default function styleConstructor(theme: Theme = {}) {
       opacity: 1
     },
     weekCalendar: {
-      marginTop: 12, 
-      marginBottom: -2
+      marginTop:5, 
+      marginBottom: 10
     },
     week: {
-      marginTop: 7,
-      marginBottom: 7,
+      marginTop: 15,
+      marginBottom:0,
       paddingRight: 15,
       paddingLeft: 15,
       flexDirection: 'row',
@@ -126,10 +126,10 @@ export default function styleConstructor(theme: Theme = {}) {
     dayHeader: {
       width: 32,
       textAlign: 'center',
-      fontSize: appStyle.textDayHeaderFontSize,
+      fontSize: 12,
       fontFamily: appStyle.textDayHeaderFontFamily,
       fontWeight: appStyle.textDayHeaderFontWeight,
-      color: appStyle.textSectionTitleColor
+      color: '#000'
     },
     arrowImage: {
       tintColor: appStyle.arrowColor,

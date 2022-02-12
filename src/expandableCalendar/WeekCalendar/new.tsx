@@ -112,11 +112,7 @@ const WeekCalendar = (props: WeekCalendarProps) => {
       testID={testID}
       style={[allowShadow && style.current.containerShadow, !hideDayNames && style.current.containerWrapper]}
     >
-      {!hideDayNames && (
-        <View style={[style.current.week, style.current.weekCalendar]}>
-          <WeekDaysNames firstDay={firstDay} style={style.current.dayHeader} />
-        </View>
-      )}
+      
       <View>
         <InfiniteList
           key="week-list"
@@ -135,6 +131,11 @@ const WeekCalendar = (props: WeekCalendarProps) => {
           }}
         />
       </View>
+      {!hideDayNames && (
+        <View style={[style.current.week, style.current.weekCalendar]}>
+          <WeekDaysNames firstDay={firstDay} style={style.current.dayHeader} />
+        </View>
+      )}
     </View>
   );
 };

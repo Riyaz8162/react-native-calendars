@@ -200,6 +200,7 @@ class WeekCalendar extends Component<WeekCalendarProps, State> {
         testID={this.props.testID}
         style={[allowShadow && this.style.containerShadow, !hideDayNames && this.style.containerWrapper]}
       >
+       
         {!hideDayNames && (
           <View style={[this.style.week, this.style.weekCalendar]}>
             {this.renderWeekDaysNames(weekDaysNames)}

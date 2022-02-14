@@ -51,17 +51,32 @@ export default function styleConstructor(theme: Theme = {}) {
     },
     sectionText: {
       fontWeight: 'bold', 
-      fontSize: 12,
-      lineHeight: 16,
-      color: '#7a92a5',
-      paddingTop: 24, // 8
-      paddingBottom: 8,
+      fontSize: 16,
+      lineHeight: 10,
+      color: '#212121',
+      paddingTop:30, // 8
+      paddingBottom:2,
       paddingLeft: 20,
-      paddingRight: 20,
-      backgroundColor: appStyle.calendarBackground,
+      backgroundColor: '#fff',
       textAlign: 'left',
       textTransform: 'uppercase'
     },
+    sectionTodayText:{
+      fontSize: 14,
+      lineHeight: 16,
+      color: '#7a92a5',
+      paddingTop:10, // 8
+      paddingBottom: 8,
+      paddingLeft:6,
+      backgroundColor: '#fff',
+      textAlign: 'left',
+      textTransform: 'capitalize'
+    },
+    eventTxt:{ 
+      color: '#6C6C6C', 
+      fontSize: 14, 
+      paddingLeft: 20
+     },
     header: {
       position: 'absolute',
       left: 0,

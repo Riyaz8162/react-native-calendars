@@ -8,8 +8,9 @@ export default function styleConstructor(theme: Theme = {}) {
     dot: {
       width: 4,
       height: 4,
-      marginTop: 1,
-      marginHorizontal: 1,
+      marginTop:0,
+      marginHorizontal: 0,
+      marginBottom:4,
       borderRadius: 2,
       opacity: 0,
       ...appStyle.dotStyle

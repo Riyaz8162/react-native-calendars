@@ -6,7 +6,7 @@ import isUndefined from 'lodash/isUndefined';
 import PropTypes from 'prop-types';
 import XDate from 'xdate';
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Text,
   SectionList,
@@ -17,14 +17,15 @@ import {
   NativeSyntheticEvent,
   NativeScrollEvent,
   LayoutChangeEvent,
-  ViewToken
+  ViewToken,
+  View
 } from 'react-native';
 
-import {isToday, isGTE, sameDate} from '../dateutils';
-import {getMoment} from '../momentResolver';
-import {parseDate} from '../interface';
-import {getDefaultLocale} from '../services';
-import {Theme} from '../types';
+import { isToday, isGTE, sameDate } from '../dateutils';
+import { getMoment } from '../momentResolver';
+import { parseDate } from '../interface';
+import { getDefaultLocale } from '../services';
+import { Theme } from '../types';
 import styleConstructor from './style';
 import asCalendarConsumer from './asCalendarConsumer';
 
@@ -51,7 +52,7 @@ export interface AgendaListProps extends SectionListProps<any, DefaultSectionT> 
   viewOffset?: number;
   /** enable scrolling the agenda list to the next date with content when pressing a day without content */
   scrollToNextEvent?: boolean;
-  
+
   context?: any;
 }
 
@@ -71,13 +72,15 @@ class AgendaList extends Component<AgendaListProps> {
     useMoment: PropTypes.bool,
     markToday: PropTypes.bool,
     sectionStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
-    avoidDateUpdates: PropTypes.bool
+    avoidDateUpdates: PropTypes.bool,
+    istoday: PropTypes.bool,
   };
 
   static defaultProps = {
-    dayFormat: 'dddd, MMM d',
+    dayFormat: 'd MMM yyyy ',
     stickySectionHeadersEnabled: true,
-    markToday: true
+    markToday: true,
+    istoday: false
   };
 
   style = styleConstructor(this.props.theme);
@@ -91,7 +94,7 @@ class AgendaList extends Component<AgendaListProps> {
   sectionHeight = 0;
 
   componentDidMount() {
-    const {date} = this.props.context;
+    const { date } = this.props.context;
     if (date !== this._topSection) {
       setTimeout(() => {
         this.scrollToSection();
@@ -100,7 +103,7 @@ class AgendaList extends Component<AgendaListProps> {
   }
 
   componentDidUpdate(prevProps: AgendaListProps) {
-    const {updateSource, date} = this.props.context;
+    const { updateSource, date } = this.props.context;
     if (date !== prevProps.context.date) {
       // NOTE: on first init data should set first section to the current date!!!
       if (updateSource !== updateSources.LIST_DRAG && updateSource !== updateSources.CALENDAR_INIT) {
@@ -123,7 +126,7 @@ class AgendaList extends Component<AgendaListProps> {
 
   getNextSectionIndex(date: string) {
     let i = 0;
-    const {sections} = this.props;
+    const { sections } = this.props;
     for (let j = 1; j < sections.length; j++) {
       const prev = parseDate(sections[j - 1].title);
       const next = parseDate(sections[j].title);
@@ -140,10 +143,8 @@ class AgendaList extends Component<AgendaListProps> {
 
   getSectionTitle(title: string) {
     if (!title) return;
-
-    const {dayFormatter, dayFormat, useMoment, markToday} = this.props;
+    const { dayFormatter, dayFormat, useMoment, markToday } = this.props;
     let sectionTitle = title;
-
     if (dayFormatter) {
       sectionTitle = dayFormatter(title);
     } else if (dayFormat) {
@@ -154,19 +155,23 @@ class AgendaList extends Component<AgendaListProps> {
         sectionTitle = new XDate(title).toString(dayFormat);
       }
     }
-
-    if (markToday) {
-      const todayString = getDefaultLocale().today || commons.todayString;
-      const today = isToday(new XDate(title));
-      sectionTitle = today ? `${todayString}, ${sectionTitle}` : sectionTitle;
-    }
-
     return sectionTitle;
   }
 
+  getSectionStatus(title:string){
+    const {  markToday } = this.props;
+    let sectionState= title;
+    if (markToday) {
+      const todayString = getDefaultLocale().today || commons.todayString;
+      const today = isToday(new XDate(title));
+      sectionState = today ? `${todayString}` : '';
+    }
+    return sectionState;
+  }
+
   scrollToSection() {
-    const {date} = this.props.context;
-    const {scrollToNextEvent, sections, viewOffset = 0} = this.props;
+    const { date } = this.props.context;
+    const { scrollToNextEvent, sections, viewOffset = 0 } = this.props;
     const sectionIndex = scrollToNextEvent ? this.getNextSectionIndex(date) : this.getSectionIndex(date);
     if (isUndefined(sectionIndex)) {
       return;
@@ -185,7 +190,7 @@ class AgendaList extends Component<AgendaListProps> {
     }
   }
 
-  onViewableItemsChanged = (info: {viewableItems: Array<ViewToken>; changed: Array<ViewToken>}) => {
+  onViewableItemsChanged = (info: { viewableItems: Array<ViewToken>; changed: Array<ViewToken> }) => {
     if (info?.viewableItems && !this.sectionScroll) {
       const topSection = get(info?.viewableItems[0], 'section.title');
       if (topSection && topSection !== this._topSection) {
@@ -217,7 +222,7 @@ class AgendaList extends Component<AgendaListProps> {
     this.props.onMomentumScrollEnd?.(event);
   };
 
-  onScrollToIndexFailed = (info: {index: number; highestMeasuredFrameIndex: number; averageItemLength: number}) => {
+  onScrollToIndexFailed = (info: { index: number; highestMeasuredFrameIndex: number; averageItemLength: number }) => {
     if (this.props.onScrollToIndexFailed) {
       this.props.onScrollToIndexFailed(info);
     } else {
@@ -229,23 +234,34 @@ class AgendaList extends Component<AgendaListProps> {
     this.sectionHeight = event.nativeEvent.layout.height;
   };
 
-  renderSectionHeader = (info: {section: SectionListData<any, DefaultSectionT>}) => {
-    const {renderSectionHeader, sectionStyle} = this.props;
+  renderSectionHeader = (info: { section: SectionListData<any, DefaultSectionT> }) => {
+    const { renderSectionHeader, sectionStyle } = this.props;
     const title = info?.section?.title;
+    const eventsLength = info?.section?.data;
 
     if (renderSectionHeader) {
       return renderSectionHeader(title);
     }
 
     return (
-      <Text allowFontScaling={false} style={[this.style.sectionText, sectionStyle]} onLayout={this.onHeaderLayout}>
-        {this.getSectionTitle(title)}
-      </Text>
+      <View style={{backgroundColor:'#fff'}}>
+        <View style={{ flexDirection: 'row'}}>
+          <Text allowFontScaling={false} style={[this.style.sectionText, sectionStyle]} onLayout={this.onHeaderLayout}>
+            {this.getSectionTitle(title)}
+          </Text>
+          <Text allowFontScaling={false} style={[this.style.sectionTodayText, sectionStyle]} onLayout={this.onHeaderLayout}>
+            {this.getSectionStatus(title)}
+          </Text>
+        </View>
+        <Text style={[this.style.eventTxt, sectionStyle]}>
+          {eventsLength.length} {eventsLength.length > 1 ? "Events" : "Event"}
+        </Text>
+      </View>
     );
   };
 
   keyExtractor = (item: any, index: number) => {
-    const {keyExtractor} = this.props;
+    const { keyExtractor } = this.props;
     return isFunction(keyExtractor) ? keyExtractor(item, index) : String(index);
   };
 
@@ -265,7 +281,7 @@ class AgendaList extends Component<AgendaListProps> {
         onMomentumScrollBegin={this.onMomentumScrollBegin}
         onMomentumScrollEnd={this.onMomentumScrollEnd}
         onScrollToIndexFailed={this.onScrollToIndexFailed}
-        // getItemLayout={this.getItemLayout} // onViewableItemsChanged is not updated when list scrolls!!!
+      // getItemLayout={this.getItemLayout} // onViewableItemsChanged is not updated when list scrolls!!!
       />
     );
   }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Alert} from 'react-native';
+import {Alert,Text} from 'react-native';
 import {
   ExpandableCalendar,
   TimelineEventProps,
@@ -10,7 +10,7 @@ import {
 } from 'react-native-calendars';
 import _ from 'lodash';
 
-const INITIAL_TIME = {hour: 9, minutes: 0};
+const INITIAL_TIME = {hour: 12, minutes: 0};
 const today = new Date();
 const getDate = (offset = 0) => CalendarUtils.getCalendarDateString(new Date().setDate(today.getDate() + offset));
 
@@ -239,6 +239,9 @@ export default class TimelineCalendarScreen extends Component {
         showTodayButton
         disabledOpacity={0.6}
       >
+
+<Text style={{textAlign:'center',marginTop:50,fontSize:20,color:'#000'}}>Today</Text>
+
         <ExpandableCalendar
           firstDay={1}
           leftArrowImageSource={require('../img/previous.png')}

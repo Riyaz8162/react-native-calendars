@@ -63,10 +63,10 @@ export default function styleConstructor(theme: Theme = {}) {
     },
     sectionTodayText:{
       fontSize: 14,
-      lineHeight: 16,
-      color: '#7a92a5',
-      paddingTop:10, // 8
-      paddingBottom: 8,
+      lineHeight: 10,
+      color: '#212121',
+      paddingTop:28, // 8
+      paddingBottom:2,
       paddingLeft:6,
       backgroundColor: '#fff',
       textAlign: 'left',

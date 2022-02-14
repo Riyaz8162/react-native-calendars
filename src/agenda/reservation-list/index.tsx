@@ -250,7 +250,6 @@ class ReservationList extends Component<ReservationListProps, State> {
 
   renderRow = ({item, index}: {item: DayAgenda; index: number}) => {
     const reservationProps = extractComponentProps(Reservation, this.props);
-
     return (
       <View onLayout={this.onRowLayoutChange.bind(this, index)}>
         <Reservation {...reservationProps} item={item.reservation} date={item.date}/>

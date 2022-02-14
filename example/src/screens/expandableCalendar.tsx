@@ -250,7 +250,7 @@ const AgendaItem = React.memo(function AgendaItem(props: ItemProps) {
     <TouchableOpacity onPress={itemPressed} style={styles.item} testID={testIDs.agenda.ITEM}>
       <View>
         <Text style={styles.itemHourText}>{item.hour}</Text>
-        <Text style={styles.itemDurationText}>{item.duration}</Text>
+        {/* <Text style={styles.itemDurationText}>{item.duration}</Text> */}
       </View>
       <Text style={styles.itemTitleText}>{item.title}</Text>
       <View style={styles.itemButtonContainer}>

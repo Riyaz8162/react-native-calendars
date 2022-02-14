@@ -9,15 +9,15 @@ export default function styleConstructor(theme: Theme = {}) {
   return StyleSheet.create({
     wrapper: {
       alignItems: 'center',
-      alignSelf: 'stretch',
-      marginLeft: -1
+      alignSelf: 'center',
     },
     base: {
-      width: 38,
-      height: FILLER_HEIGHT,
-      alignItems: 'center'
+      width:34,
+      height:34,
+      alignItems: 'center',
+      borderRadius:3,
+      marginBottom:2
     },
-
     fillers: {
       position: 'absolute',
       height: FILLER_HEIGHT,

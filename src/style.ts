@@ -1,13 +1,13 @@
 export const foregroundColor = 'white';
 export const backgroundColor = '#f2F4f5'; // Agenda's reservations bg color
-
+export const OurAppTheme ='#F2F4F7';
 export const separatorColor = '#f2F4f5'; // not in use
 export const processedColor = '#a7e0a3'; // not in use
 export const processingColor = '#ffce5c'; // not in use
 export const failedColor = '#f67e7e'; // not in use
 export const textSecondaryColor = '#7a92a5'; // not in use
 
-export const textDefaultColor = '#2d4150';
+export const textDefaultColor = '#000000';
 export const textColor = '#43515c';
 export const textLinkColor = '#00BBF2';
 
@@ -16,7 +16,7 @@ export const textMonthFontFamily = 'System';
 export const textDayHeaderFontFamily = 'System';
 export const todayButtonFontFamily = 'System';
 
-export const textDayFontWeight = '300';
+export const textDayFontWeight = '600';
 export const textMonthFontWeight = '300';
 export const textDayHeaderFontWeight = undefined;
 export const todayButtonFontWeight = '600';

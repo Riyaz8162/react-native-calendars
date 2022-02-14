@@ -61,7 +61,7 @@ class Week extends PureComponent<WeekProps> {
 
   render() {
     const {current} = this.props;
-    const dates = this.getWeek(current);
+    const dates = this.getWeek(current);    
     const week: any[] = [];
 
     if (dates) {

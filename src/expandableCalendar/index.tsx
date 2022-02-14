@@ -574,7 +574,7 @@ class ExpandableCalendar extends Component<ExpandableCalendarProps, State> {
             renderArrow={this.renderArrow}
           />
         ) : (
-          <Animated.View ref={this.wrapper} style={{height: deltaY}} {...this.panResponder.panHandlers}>
+          <Animated.View ref={this.wrapper} style={{height: deltaY,}} {...this.panResponder.panHandlers}>
             <CalendarList
               testID="calendar"
               horizontal={horizontal}

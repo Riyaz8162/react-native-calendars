@@ -6,13 +6,16 @@ export default function styleConstructor(theme: Theme = {}) {
   const appStyle = {...defaultStyle, ...theme};
   return StyleSheet.create({
     container: {
-      alignSelf: 'stretch',
-      alignItems: 'center'
+      alignSelf: 'center',
+      alignItems: 'center',
     },
     base: {
-      width: 32,
-      height: 32,
-      alignItems: 'center'
+      alignItems: 'center',
+      width:34,
+      height:34,
+      backgroundColor:'#fff',
+      borderRadius:3,
+      marginBottom:2
     },
     text: {
       marginTop: Platform.OS === 'android' ? 4 : 6,

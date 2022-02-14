@@ -5,6 +5,7 @@ const {padNumber, toMarkingFormat} = require('../interface');
 export function getCalendarDateString(date?: Date | string | number) {
   if (!isUndefined(date)) {
     if (isDate(date) && !isNaN(date.getFullYear())) {
+      
       return date.getFullYear() + '-' + padNumber(date.getMonth() + 1) + '-' + padNumber(date.getDate());
     } else if (isString(date)) {
       // issue with strings and XDate's utc-mode - returns one day before

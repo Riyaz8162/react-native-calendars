@@ -27,7 +27,7 @@ const NUMBER_OF_PAGES = 50;
 const 
 WeekCalendar = (props: WeekCalendarProps) => {
   
-  const {current, firstDay = 0, markedDates, allowShadow = true, hideDayNames, theme, calendarWidth, testID} = props;
+  const {current, firstDay = 7, markedDates, allowShadow = true, hideDayNames, theme, calendarWidth, testID} = props;
   const context = useContext(CalendarContext);
   const {date, updateSource} = context;
   const style = useRef(styleConstructor(theme));

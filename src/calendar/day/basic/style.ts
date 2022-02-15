@@ -8,6 +8,7 @@ export default function styleConstructor(theme: Theme = {}) {
     container: {
       alignSelf: 'center',
       alignItems: 'center',
+      overflow:'hidden'
     },
     base: {
       alignItems: 'center',
@@ -34,11 +35,12 @@ export default function styleConstructor(theme: Theme = {}) {
       borderRadius: 0
     },
     today: {
-      backgroundColor: appStyle.todayBackgroundColor,
-      borderRadius: 0
+      backgroundColor: appStyle.AppTodayTheme,
+      borderColor:'#3481F3',
+      borderWidth:1,
     },
     todayText: {
-      color: appStyle.todayTextColor
+      color: "#3481F3",
     },
     selectedText: {
       color: appStyle.selectedDayTextColor

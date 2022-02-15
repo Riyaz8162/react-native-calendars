@@ -49,7 +49,7 @@ class CalendarProvider extends Component<Props> {
     showTodayButton: PropTypes.bool,
     todayBottomMargin: PropTypes.number,
     todayButtonStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
-    disabledOpacity: PropTypes.number
+    disabledOpacity: PropTypes.number,
   };
 
   style = styleConstructor(this.props.theme);
@@ -62,12 +62,14 @@ class CalendarProvider extends Component<Props> {
     buttonY: new Animated.Value(this.props.todayBottomMargin ? -this.props.todayBottomMargin : -TOP_POSITION),
     buttonIcon: this.presenter.getButtonIcon(this.getDate(this.props.date), this.props.showTodayButton),
     disabled: false,
-    opacity: new Animated.Value(1)
+    opacity: new Animated.Value(1),
   };
 
   componentDidUpdate(prevProps: Props) {
+    console.log("this.props.date",this.props.date + " prevProps.date " +prevProps.date);
+    
     if (this.props.date && prevProps.date !== this.props.date) {
-      this.setDate(this.props.date, UpdateSources.PROP_UPDATE);
+      this.setDate(this.props.date, UpdateSources.PROP_UPDATE,);
     }
   }
 
@@ -144,13 +146,13 @@ class CalendarProvider extends Component<Props> {
     const today = getTodayFormatted();
 
     return (
-      <Animated.View style={[this.style.todayButtonContainer, {transform: [{translateY: buttonY}]}]}>
+      <Animated.View style={[this.style.todayButtonContainer, ]}>
         <TouchableOpacity
           style={[this.style.todayButton, this.props.todayButtonStyle]}
           onPress={this.onTodayPress}
           disabled={disabled}
         >
-          <Animated.Image style={[this.style.todayButtonImage, {opacity}]} source={buttonIcon} />
+          {/* <Animated.Image style={[this.style.todayButtonImage, {opacity}]} source={buttonIcon} /> */}
           <Animated.Text allowFontScaling={false} style={[this.style.todayButtonText, {opacity}]}>
             {today}
           </Animated.Text>
@@ -163,7 +165,7 @@ class CalendarProvider extends Component<Props> {
     return (
       <CalendarContext.Provider value={this.getProviderContextValue()}>
         <View style={[styles.container, this.props.style]}>{this.props.children}</View>
-        {this.props.showTodayButton && this.renderTodayButton()}
+        {this.renderTodayButton()}
       </CalendarContext.Provider>
     );
   }

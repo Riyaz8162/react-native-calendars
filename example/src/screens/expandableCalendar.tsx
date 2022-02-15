@@ -178,6 +178,8 @@ export default class ExpandableCalendarScreen extends Component<Props> {
     return <AgendaItem item={item}/>;
   };
 
+
+
   render() {
     return (
       <CalendarProvider
@@ -187,10 +189,11 @@ export default class ExpandableCalendarScreen extends Component<Props> {
         showTodayButton
         disabledOpacity={0.6}
         // theme={this.todayBtnTheme}
-        // todayBottomMargin={16}
+         todayBottomMargin={20}
       >
+        <Text  style={{fontSize:20,color:'plum',margin:20,textAlign:'center'}}></Text>
         {this.props.weekView ? (
-          <WeekCalendar testID={testIDs.weekCalendar.CONTAINER} firstDay={1} markedDates={this.marked}/>
+          <WeekCalendar testID={testIDs.weekCalendar.CONTAINER} firstDay={7} markedDates={this.marked}/>
         ) : (
           <ExpandableCalendar
             testID={testIDs.expandableCalendar.CONTAINER}
@@ -212,6 +215,7 @@ export default class ExpandableCalendarScreen extends Component<Props> {
           />
         )}
         <AgendaList
+        //ref={(agenda) => { this.agenda = agenda; }}
           sections={ITEMS}
           renderItem={this.renderItem}
           // scrollToNextEvent

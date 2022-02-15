@@ -251,7 +251,7 @@ class CalendarHeader extends Component<CalendarHeaderProps> {
 
   renderDayNames() {
     const {firstDay, hideDayNames, showWeekNumbers, testID} = this.props;
-    const weekDaysNames = weekDayNames(firstDay);
+    const weekDaysNames = weekDayNames(7);
 
     if (!hideDayNames) {
       return (

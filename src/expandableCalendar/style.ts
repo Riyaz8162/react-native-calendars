@@ -31,7 +31,8 @@ export default function styleConstructor(theme: Theme = {}) {
       paddingBottom: 6
     },
     container: {
-      backgroundColor: appStyle.OurAppTheme
+      backgroundColor: appStyle.OurAppTheme,
+      flex:1
     },
     knobContainer: {
       position: 'absolute',
@@ -124,7 +125,7 @@ export default function styleConstructor(theme: Theme = {}) {
       marginBottom: 10
     },
     week: {
-      marginTop: 15,
+      marginTop: 10,
       marginBottom:0,
       paddingRight: 15,
       paddingLeft: 15,
@@ -134,7 +135,7 @@ export default function styleConstructor(theme: Theme = {}) {
     dayContainer: {
       flex: 1, 
       alignItems: 'center',
-      backgroundColor:appStyle.OurAppTheme
+      backgroundColor:appStyle.OurAppTheme,
     },
     emptyDayContainer: {
       flex: 1
@@ -154,8 +155,8 @@ export default function styleConstructor(theme: Theme = {}) {
     todayButtonContainer: {
       alignItems: appStyle.todayButtonPosition === 'right' ? 'flex-end' : 'flex-start',
       position: 'absolute', 
-      left: 20, 
-      right: 20, 
+      top: 20, 
+      right:80, 
       bottom : 0
     },
     todayButton: {
@@ -165,18 +166,18 @@ export default function styleConstructor(theme: Theme = {}) {
       flexDirection: appStyle.todayButtonPosition === 'right' ? 'row-reverse' : 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'white',
-      ...Platform.select({
-        ios: {
-          shadowColor: '#79838A',
-          shadowOpacity: 0.3,
-          shadowRadius: 14,
-          shadowOffset: {height: 6, width: 0}
-        },
-        android: {
-          elevation: 6
-        }
-      })
+    //  backgroundColor: 'white',
+      // ...Platform.select({
+      //   ios: {
+      //     shadowColor: '#79838A',
+      //     shadowOpacity: 0.3,
+      //     shadowRadius: 14,
+      //     shadowOffset: {height: 6, width: 0}
+      //   },
+      //   android: {
+      //     elevation: 6
+      //   }
+      // })
     },
     todayButtonText: {
       color: appStyle.todayButtonTextColor,

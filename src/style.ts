@@ -1,6 +1,7 @@
 export const foregroundColor = 'white';
 export const backgroundColor = '#f2F4f5'; // Agenda's reservations bg color
 export const OurAppTheme ='#F2F4F7';
+export const AppTodayTheme = "#E8F5FF";
 export const separatorColor = '#f2F4f5'; // not in use
 export const processedColor = '#a7e0a3'; // not in use
 export const processingColor = '#ffce5c'; // not in use

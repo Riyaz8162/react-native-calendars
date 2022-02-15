@@ -16,7 +16,9 @@ export default function styleConstructor(theme: Theme = {}) {
       height:34,
       alignItems: 'center',
       borderRadius:3,
-      marginBottom:2
+      marginBottom:2,
+      borderColor:'#3481F3',
+      borderWidth:0.5
     },
     fillers: {
       position: 'absolute',

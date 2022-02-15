@@ -31,7 +31,7 @@ export default function styleConstructor(theme: Theme = {}) {
       paddingBottom: 6
     },
     container: {
-      backgroundColor: appStyle.OurAppTheme,
+     // backgroundColor: appStyle.OurAppTheme,
       flex:1
     },
     knobContainer: {
@@ -155,8 +155,8 @@ export default function styleConstructor(theme: Theme = {}) {
     todayButtonContainer: {
       alignItems: appStyle.todayButtonPosition === 'right' ? 'flex-end' : 'flex-start',
       position: 'absolute', 
-      top: 20, 
-      right:80, 
+      top:Platform.OS === "ios" ? 55 : 72, 
+      right:100, 
       bottom : 0
     },
     todayButton: {
@@ -180,7 +180,7 @@ export default function styleConstructor(theme: Theme = {}) {
       // })
     },
     todayButtonText: {
-      color: appStyle.todayButtonTextColor,
+      color: appStyle.OurAppTheme,
       fontSize: commons.isTablet ? appStyle.todayButtonFontSize + 2 : appStyle.todayButtonFontSize, 
       fontWeight: appStyle.todayButtonFontWeight,
       fontFamily: appStyle.todayButtonFontFamily

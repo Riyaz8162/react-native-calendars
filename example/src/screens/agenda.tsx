@@ -22,7 +22,7 @@ export default class AgendaScreen extends Component<State> {
         renderItem={this.renderItem}
         renderEmptyDate={this.renderEmptyDate}
         rowHasChanged={this.rowHasChanged}
-        showClosingKnob={true}
+        //showClosingKnob={true}
         // markingType={'period'}
         // markedDates={{
         //    '2017-05-08': {textColor: '#43515c'},

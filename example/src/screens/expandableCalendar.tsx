@@ -206,7 +206,7 @@ export default class ExpandableCalendarScreen extends Component<Props> {
             // headerStyle={styles.calendar} // for horizontal only
             // disableWeekScroll
             // theme={this.theme}
-            // disableAllTouchEventsForDisabledDays
+             disableAllTouchEventsForDisabledDays
             firstDay={1}
             markedDates={this.marked}
             leftArrowImageSource={leftArrowIcon}

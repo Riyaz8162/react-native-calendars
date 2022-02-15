@@ -452,7 +452,7 @@ export default class Agenda extends Component<AgendaProps, State> {
         </Animated.View>
         <Animated.View style={weekdaysStyle}>
           {this.renderWeekNumbersSpace()}
-          {this.renderWeekDaysNames(weekDaysNames)}
+          {/* {this.renderWeekDaysNames(weekDaysNames)} */}
         </Animated.View>
         <Animated.ScrollView
           ref={this.scrollPad}

@@ -155,8 +155,8 @@ export default function styleConstructor(theme: Theme = {}) {
     todayButtonContainer: {
       alignItems: appStyle.todayButtonPosition === 'right' ? 'flex-end' : 'flex-start',
       position: 'absolute', 
-      top:Platform.OS === "ios" ? 55 : 72, 
-      right:100, 
+      top:Platform.OS === "ios" ? 55 :40, 
+      right:90, 
       bottom : 0
     },
     todayButton: {
@@ -166,7 +166,7 @@ export default function styleConstructor(theme: Theme = {}) {
       flexDirection: appStyle.todayButtonPosition === 'right' ? 'row-reverse' : 'row',
       justifyContent: 'center',
       alignItems: 'center',
-    //  backgroundColor: 'white',
+      //  backgroundColor: 'red',
       // ...Platform.select({
       //   ios: {
       //     shadowColor: '#79838A',
@@ -180,7 +180,7 @@ export default function styleConstructor(theme: Theme = {}) {
       // })
     },
     todayButtonText: {
-      color: appStyle.OurAppTheme,
+      color:"#3481F3" ,
       fontSize: commons.isTablet ? appStyle.todayButtonFontSize + 2 : appStyle.todayButtonFontSize, 
       fontWeight: appStyle.todayButtonFontWeight,
       fontFamily: appStyle.todayButtonFontFamily

@@ -191,7 +191,7 @@ export default class ExpandableCalendarScreen extends Component<Props> {
         // theme={this.todayBtnTheme}
          todayBottomMargin={20}
       >
-        <Text  style={{fontSize:20,color:'plum',margin:20,textAlign:'center'}}></Text>
+
         {this.props.weekView ? (
           <WeekCalendar testID={testIDs.weekCalendar.CONTAINER} firstDay={7} markedDates={this.marked}/>
         ) : (
@@ -206,7 +206,7 @@ export default class ExpandableCalendarScreen extends Component<Props> {
             // headerStyle={styles.calendar} // for horizontal only
             // disableWeekScroll
             // theme={this.theme}
-             disableAllTouchEventsForDisabledDays
+           //  disableAllTouchEventsForDisabledDays
             firstDay={1}
             markedDates={this.marked}
             leftArrowImageSource={leftArrowIcon}

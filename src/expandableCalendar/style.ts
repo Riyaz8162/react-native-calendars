@@ -5,7 +5,7 @@ import {Theme} from '../types';
 
 const commons = require('./commons');
 export const HEADER_HEIGHT = 68;
-export const KNOB_CONTAINER_HEIGHT = 24;
+export const KNOB_CONTAINER_HEIGHT =5;
 
 
 export default function styleConstructor(theme: Theme = {}) {
@@ -38,15 +38,17 @@ export default function styleConstructor(theme: Theme = {}) {
       position: 'absolute',
       left: 0,
       right: 0,
-      height: KNOB_CONTAINER_HEIGHT,
+      height:12,
       bottom: 0,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: appStyle.calendarBackground
+      marginVertical:0
+      
     },
     knob: {
       width: 40,
       height: 4,
+      marginTop:10,
       borderRadius: 3,
       backgroundColor: '#e8ecf0'
     },

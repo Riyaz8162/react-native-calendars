@@ -114,7 +114,6 @@ WeekCalendar = (props: WeekCalendarProps) => {
       testID={testID}
       style={[allowShadow && style.current.containerShadow, !hideDayNames && style.current.containerWrapper]}
     >
-      
       <View>
         <InfiniteList
           key="week-list"

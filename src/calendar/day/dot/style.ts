@@ -6,18 +6,17 @@ export default function styleConstructor(theme: Theme = {}) {
   const appStyle = {...defaultStyle, ...theme};
   return StyleSheet.create({
     dot: {
-      width: 4,
-      height: 4,
+      width:5,
+      height: 5,
       marginTop:0,
       marginHorizontal: 0,
-      marginBottom:4,
-      borderRadius: 2,
+      borderRadius:5/2,
       opacity: 0,
-      ...appStyle.dotStyle
+      color:appStyle.todayDotColor
     },
     visibleDot: {
       opacity: 1,
-      backgroundColor: appStyle.dotColor
+      backgroundColor: appStyle.todayDotColor
     },
     selectedDot: {
       backgroundColor: appStyle.selectedDotColor

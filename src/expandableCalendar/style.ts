@@ -13,24 +13,24 @@ export default function styleConstructor(theme: Theme = {}) {
 
   return StyleSheet.create({
     containerShadow: {
-      // backgroundColor: appStyle.OurAppTheme,
-      // ...Platform.select({
-      //   ios: {
-      //     shadowColor: '#858F96',
-      //     shadowOpacity: 0.25,
-      //     shadowRadius: 10,
-      //     shadowOffset: { height: 2, width: 0 },
-      //     zIndex: 99
-      //   },
-      //   android: {
-      //     shadowColor: '#858F96',
-      //     shadowOpacity: 0.25,
-      //     shadowRadius: 10,
-      //     shadowOffset: { height: 2, width: 0 },
-      //     zIndex: 99,
-      //     elevation: 15,
-      //   }
-      // })
+      backgroundColor: appStyle.OurAppTheme,
+      ...Platform.select({
+        ios: {
+          shadowColor: '#fff',
+          shadowOpacity: 0.25,
+          shadowRadius: 10,
+          shadowOffset: { height: 2, width: 0 },
+          zIndex: 99
+        },
+        android: {
+          shadowColor: '#fff',
+          shadowOpacity: 0.25,
+          shadowRadius: 10,
+          shadowOffset: { height: 2, width: 0 },
+          zIndex:50,
+          elevation: 15,
+        }
+      })
     },
     verticalLine: {
       width: '100%',

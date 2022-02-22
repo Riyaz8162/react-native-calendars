@@ -1,90 +1,101 @@
-import {StyleSheet, Platform} from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import * as defaultStyle from '../style';
-import {Theme} from '../types';
+import { Theme } from '../types';
 
 
 const commons = require('./commons');
 export const HEADER_HEIGHT = 68;
-export const KNOB_CONTAINER_HEIGHT =5;
+export const KNOB_CONTAINER_HEIGHT = 5;
 
 
 export default function styleConstructor(theme: Theme = {}) {
-  const appStyle = {...defaultStyle, ...theme};
+  const appStyle = { ...defaultStyle, ...theme };
 
   return StyleSheet.create({
     containerShadow: {
-     // backgroundColor: appStyle.OurAppTheme,
-      ...Platform.select({
-        ios: {
-          shadowColor: '#858F96',
-          shadowOpacity: 0.25,
-          shadowRadius: 10,
-          shadowOffset: {height: 2, width: 0},
-          zIndex: 99
-        },
-        android: {
-          elevation: 3
-        }
-      })
+      // backgroundColor: appStyle.OurAppTheme,
+      // ...Platform.select({
+      //   ios: {
+      //     shadowColor: '#858F96',
+      //     shadowOpacity: 0.25,
+      //     shadowRadius: 10,
+      //     shadowOffset: { height: 2, width: 0 },
+      //     zIndex: 99
+      //   },
+      //   android: {
+      //     shadowColor: '#858F96',
+      //     shadowOpacity: 0.25,
+      //     shadowRadius: 10,
+      //     shadowOffset: { height: 2, width: 0 },
+      //     zIndex: 99,
+      //     elevation: 15,
+      //   }
+      // })
+    },
+    verticalLine: {
+      width: '100%',
+      borderColor: '#F2F4F7',
+      borderBottomWidth: 1,
+      marginTop:32
     },
     containerWrapper: {
       paddingBottom: 6
     },
     container: {
-     // backgroundColor: appStyle.OurAppTheme,
-      flex:1
+      // backgroundColor: appStyle.OurAppTheme,
+      flex: 1
     },
     knobContainer: {
       position: 'absolute',
       left: 0,
       right: 0,
-      height:12,
+      height: 12,
       bottom: -10,
       alignItems: 'center',
       justifyContent: 'center',
-      marginVertical:0
-      
+      marginVertical: 0
+
     },
     knob: {
-      width: 40,
-      height: 4,
-      marginTop:10,
-      borderRadius: 3,
+      width: 68,
+      height:5,
+      marginTop:20,
+      borderRadius:6,
       backgroundColor: '#e8ecf0'
     },
     sectionText: {
-      fontWeight: 'bold', 
+      fontWeight: 'bold',
       fontSize: 16,
       lineHeight: 10,
       color: '#212121',
-      paddingTop:30, // 8
-      paddingBottom:2,
+      paddingTop: 30, // 8
+      paddingBottom: 2,
       paddingLeft: 20,
       backgroundColor: '#fff',
       textAlign: 'left',
       textTransform: 'uppercase'
     },
-    sectionTodayText:{
+    sectionTodayText: {
       fontSize: 14,
       lineHeight: 10,
       color: '#212121',
-      paddingTop:28, // 8
-      paddingBottom:2,
-      paddingLeft:6,
+      paddingTop: 28, // 8
+      paddingBottom: 2,
+      paddingLeft: 6,
       backgroundColor: '#fff',
       textAlign: 'left',
       textTransform: 'capitalize'
     },
-    eventTxt:{ 
-      color: '#6C6C6C', 
-      fontSize: 14, 
+    eventTxt: {
+      color: '#6C6C6C',
+      fontSize: 14,
       paddingLeft: 20
-     },
+    },
     header: {
       position: 'absolute',
       left: 0,
       right: 0,
-      backgroundColor: appStyle.calendarBackground
+      backgroundColor: appStyle.calendarBackground,
     },
     headerTitle: {
       alignSelf: 'center',
@@ -96,8 +107,8 @@ export default function styleConstructor(theme: Theme = {}) {
       color: appStyle.monthTextColor
     },
     weekDayNames: {
-      flexDirection: 'row', 
-      justifyContent: 'space-between' 
+      flexDirection: 'row',
+      justifyContent: 'space-between'
     },
     weekday: {
       width: 32,
@@ -123,21 +134,21 @@ export default function styleConstructor(theme: Theme = {}) {
       opacity: 1
     },
     weekCalendar: {
-      marginTop:5, 
+      marginTop: 5,
       marginBottom: 10
     },
     week: {
       marginTop: 10,
-      marginBottom:0,
+      marginBottom: 0,
       paddingRight: 15,
       paddingLeft: 15,
       flexDirection: 'row',
       justifyContent: 'space-around'
     },
     dayContainer: {
-      flex: 1, 
+      flex: 1,
       alignItems: 'center',
-     // backgroundColor:appStyle.OurAppTheme,
+      // backgroundColor:appStyle.OurAppTheme,
     },
     emptyDayContainer: {
       flex: 1
@@ -151,18 +162,18 @@ export default function styleConstructor(theme: Theme = {}) {
       color: '#000'
     },
     arrowImage: {
-     // tintColor: appStyle.arrowColor,
-      transform: commons.isRTL ? [{scaleX: -1}] : undefined
+      // tintColor: appStyle.arrowColor,
+      transform: commons.isRTL ? [{ scaleX: -1 }] : undefined
     },
     todayButtonContainer: {
       alignItems: appStyle.todayButtonPosition === 'right' ? 'flex-end' : 'flex-start',
-      position: 'absolute', 
-      top:Platform.OS === "ios" ? 55 :72, 
-      right:100, 
-      bottom : 0
+      position: 'absolute',
+      top: Platform.OS === "ios" ? 55 : 72,
+      right: 100,
+      bottom: 0
     },
     todayButton: {
-      height: commons.isTablet ? 40 : 28, 
+      height: commons.isTablet ? 40 : 28,
       paddingHorizontal: commons.isTablet ? 20 : 12,
       borderRadius: commons.isTablet ? 20 : 14,
       flexDirection: appStyle.todayButtonPosition === 'right' ? 'row-reverse' : 'row',
@@ -170,13 +181,13 @@ export default function styleConstructor(theme: Theme = {}) {
       alignItems: 'center',
     },
     todayButtonText: {
-      color:"#3481F3" ,
-      fontSize: commons.isTablet ? appStyle.todayButtonFontSize + 2 : appStyle.todayButtonFontSize, 
+      color: "#3481F3",
+      fontSize: commons.isTablet ? appStyle.todayButtonFontSize + 2 : appStyle.todayButtonFontSize,
       fontWeight: appStyle.todayButtonFontWeight,
       fontFamily: appStyle.todayButtonFontFamily
     },
     todayButtonImage: {
-      tintColor: appStyle.todayButtonTextColor, 
+      tintColor: appStyle.todayButtonTextColor,
       marginLeft: appStyle.todayButtonPosition === 'right' ? 7 : undefined,
       marginRight: appStyle.todayButtonPosition === 'right' ? undefined : 7
     },

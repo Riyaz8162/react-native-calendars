@@ -191,6 +191,7 @@ export default class ExpandableCalendarScreen extends Component<Props> {
         // theme={this.todayBtnTheme}
          todayBottomMargin={20}
       >
+        
 
         {this.props.weekView ? (
           <WeekCalendar testID={testIDs.weekCalendar.CONTAINER} firstDay={7} markedDates={this.marked}/>
@@ -222,6 +223,7 @@ export default class ExpandableCalendarScreen extends Component<Props> {
           // sectionStyle={styles.section}
           // dayFormat={'YYYY-MM-d'}
         />
+    
       </CalendarProvider>
     );
   }

@@ -203,7 +203,7 @@ export default class ExpandableCalendarScreen extends Component<Props> {
             // disablePan
             // hideKnob
             // initialPosition={ExpandableCalendar.positions.OPEN}
-            // calendarStyle={styles.calendar}
+             calendarStyle={styles.calendar}
             // headerStyle={styles.calendar} // for horizontal only
             // disableWeekScroll
             // theme={this.theme}
@@ -266,7 +266,7 @@ const AgendaItem = React.memo(function AgendaItem(props: ItemProps) {
 const styles = StyleSheet.create({
   calendar: {
     paddingLeft: 20,
-    paddingRight: 20
+    paddingRight: 20,
   },
   section: {
     backgroundColor: lightThemeColor,

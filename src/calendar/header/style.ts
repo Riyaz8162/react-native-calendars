@@ -8,10 +8,9 @@ export default function (theme: Theme = {}) {
     header: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      paddingLeft:8,
-      paddingRight: 8,
       marginTop: 6,
       alignItems: 'center',
+      marginBottom:6
  
     },
     headerContainer: {
@@ -42,19 +41,19 @@ export default function (theme: Theme = {}) {
     },
     // @ts-expect-error
     week: {
-      marginTop: 7,
+     
       flexDirection: 'row',
-      justifyContent: 'space-around'
+       justifyContent: 'space-evenly',
+      backgroundColor:'#F2F4F7',
+      width:'100%'
     },
     dayHeader: {
-      marginTop: 2,
-      marginBottom: 7,
-      width: 32,
+      marginTop: 4,
+      marginBottom: 4,
       textAlign: 'center',
-      fontSize: appStyle.textDayHeaderFontSize,
-      fontFamily: appStyle.textDayHeaderFontFamily,
-      fontWeight: appStyle.textDayHeaderFontWeight,
-      color: appStyle.textSectionTitleColor
+      fontSize: 14,
+      fontWeight: '600',
+      color: '#000'
     },
     disabledDayHeader: {
       color: appStyle.textSectionTitleDisabledColor

@@ -166,7 +166,10 @@ export default function styleConstructor(theme: Theme = {}) {
     },
     arrowImage: {
       // tintColor: appStyle.arrowColor,
-      transform: commons.isRTL ? [{ scaleX: -1 }] : undefined
+      transform: commons.isRTL ? [{ scaleX: -1 }] : undefined,
+      marginLeft:10,
+      marginRight:10
+      
     },
     todayButtonContainer: {
       alignItems: appStyle.todayButtonPosition === 'right' ? 'flex-end' : 'flex-start',

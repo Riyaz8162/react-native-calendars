@@ -215,13 +215,10 @@ export default class ExpandableCalendarScreen extends Component<Props> {
             // animateScroll
           />
         )}
+
         <AgendaList
-        //ref={(agenda) => { this.agenda = agenda; }}
           sections={ITEMS}
           renderItem={this.renderItem}
-          // scrollToNextEvent
-          // sectionStyle={styles.section}
-          // dayFormat={'YYYY-MM-d'}
         />
     
       </CalendarProvider>
@@ -281,7 +278,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderBottomWidth: 1,
     borderBottomColor: 'lightgrey',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   itemHourText: {
     color: 'black'

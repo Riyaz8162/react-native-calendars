@@ -34,7 +34,7 @@ export default function styleConstructor(theme: Theme = {}) {
     },
     verticalLine: {
       width: '100%',
-      borderColor: '#F2F4F7',
+      borderBottomColor: '#F2F4F7',
       borderBottomWidth: 1,
       marginTop:32
     },
@@ -53,7 +53,9 @@ export default function styleConstructor(theme: Theme = {}) {
       bottom: -10,
       alignItems: 'center',
       justifyContent: 'center',
-      marginVertical: 0
+      marginVertical: 0,
+      backgroundColor:'#fff'
+   
 
     },
     knob: {
@@ -192,6 +194,7 @@ export default function styleConstructor(theme: Theme = {}) {
       marginLeft: appStyle.todayButtonPosition === 'right' ? 7 : undefined,
       marginRight: appStyle.todayButtonPosition === 'right' ? undefined : 7
     },
+
     ...(theme?.stylesheet?.expandable?.main || {})
   });
 }

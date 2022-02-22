@@ -536,9 +536,11 @@ class ExpandableCalendar extends Component<ExpandableCalendarProps, State> {
     return (
       <View style={this.style.knobContainer} pointerEvents={'none'} testID={`${this.props.testID}-knob`}>
         <View style={this.style.knob} testID={CALENDAR_KNOB} />
+        <View style={{width:'100%',borderBottomColor:'#E0E0E0',borderBottomWidth:.8,marginTop:16}}/>  
       </View>
     );
   }
+
 
   renderArrow = (direction: Direction) => {
     const {renderArrow, rightArrowImageSource = RIGHT_ARROW, leftArrowImageSource = LEFT_ARROW, testID} = this.props;
@@ -563,7 +565,8 @@ class ExpandableCalendar extends Component<ExpandableCalendarProps, State> {
     const themeObject = Object.assign(this.headerStyleOverride, theme);
 
     return (
-      <View testID={this.props.testID} style={[allowShadow && this.style.containerShadow, style]}>
+      <>
+      <View testID={this.props.testID} style={[ this.style.containerShadow, style]}>
         {screenReaderEnabled ? (
           <Calendar
             testID="calendar"
@@ -598,8 +601,10 @@ class ExpandableCalendar extends Component<ExpandableCalendarProps, State> {
             {!horizontal && this.renderHeader()}
           </Animated.View>
         )}
-        
+    
       </View>
+       
+        </>
     );
   }
 }

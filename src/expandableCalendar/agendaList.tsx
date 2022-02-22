@@ -272,6 +272,7 @@ class AgendaList extends Component<AgendaListProps> {
       <SectionList
         {...props}
         ref={this.list}
+        style={{marginTop:10}}
         keyExtractor={this.keyExtractor}
         showsVerticalScrollIndicator={false}
         onViewableItemsChanged={this.onViewableItemsChanged}

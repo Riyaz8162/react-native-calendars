@@ -237,7 +237,6 @@ class CalendarList extends Component<CalendarListProps, State> {
     if (sameMonth(day, this.state.currentMonth)) {
       return;
     }
-
     this.setState({currentMonth: day.clone()}, () => {
       this.scrollToMonth(this.state.currentMonth);
 

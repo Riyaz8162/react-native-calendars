@@ -151,7 +151,7 @@ export default function styleConstructor(theme: Theme = {}) {
       color: '#000'
     },
     arrowImage: {
-      tintColor: appStyle.arrowColor,
+     // tintColor: appStyle.arrowColor,
       transform: commons.isRTL ? [{scaleX: -1}] : undefined
     },
     todayButtonContainer: {

@@ -23,7 +23,8 @@ export default function getStyle(theme: Theme = {}) {
     },
     calendar: {
       paddingLeft: 15,
-      paddingRight: 15
+      paddingRight: 15,
+    
     },
     staticHeader: {
       position: 'absolute',

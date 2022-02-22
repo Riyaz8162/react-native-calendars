@@ -5,7 +5,7 @@ import {ExpandableCalendar, AgendaList, CalendarProvider, WeekCalendar} from 're
 import testIDs from '../testIDs';
 
 const today = new Date().toISOString().split('T')[0];
-const fastDate = getPastDate(3);
+const fastDate = getPastDate(0);
 const futureDates = getFutureDates(9);
 const dates = [fastDate, today].concat(futureDates);
 const themeColor = '#00AAAF';
@@ -151,8 +151,8 @@ function getTheme() {
   };
 }
 
-const leftArrowIcon = require('../img/previous.png');
-const rightArrowIcon = require('../img/next.png');
+const leftArrowIcon = require('../img/angle-left.png');
+const rightArrowIcon = require('../img/angle-right.png');
 
 interface Props {
   weekView?: boolean;
@@ -207,7 +207,7 @@ export default class ExpandableCalendarScreen extends Component<Props> {
             // disableWeekScroll
             // theme={this.theme}
            //  disableAllTouchEventsForDisabledDays
-            firstDay={1}
+            firstDay={0}
             markedDates={this.marked}
             leftArrowImageSource={leftArrowIcon}
             rightArrowImageSource={rightArrowIcon}

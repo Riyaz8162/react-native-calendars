@@ -12,18 +12,19 @@ export default function getStyle(theme: Theme = {}) {
     },
     dayContainer: {
       flex: 1,
-      alignItems: 'center'
+      alignItems: 'center',  
     },
     emptyDayContainer: {
-      flex: 1
+      flex: 1,
+      
     },
     monthView: {
-      backgroundColor: appStyle.calendarBackground
+      backgroundColor: appStyle.calendarBackground,
     },
     week: {
-      marginVertical: appStyle.weekVerticalMargin,
+      marginVertical:5,
       flexDirection: 'row',
-      justifyContent: 'space-around'
+      justifyContent: 'space-around',
     },
     // @ts-expect-error
     ...(theme['stylesheet.calendar.main'] || {})

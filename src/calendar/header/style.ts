@@ -8,10 +8,11 @@ export default function (theme: Theme = {}) {
     header: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      paddingLeft: 10,
-      paddingRight: 10,
+      paddingLeft:8,
+      paddingRight: 8,
       marginTop: 6,
-      alignItems: 'center'
+      alignItems: 'center',
+ 
     },
     headerContainer: {
       flexDirection: 'row'
@@ -24,7 +25,7 @@ export default function (theme: Theme = {}) {
       margin: 10
     },
     arrow: {
-      padding: 10,
+
       ...appStyle.arrowStyle
     },
     arrowImage: {

@@ -32,7 +32,7 @@ export default function styleConstructor(theme: Theme = {}) {
     },
     selected: {
       backgroundColor:"#3481F3",
-      borderRadius: 0
+      borderRadius:3
     },
     today: {
       backgroundColor: appStyle.AppTodayTheme,

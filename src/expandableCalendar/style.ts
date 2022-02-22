@@ -126,6 +126,7 @@ export default function styleConstructor(theme: Theme = {}) {
       left: 0,
       right: 0,
       top: HEADER_HEIGHT + (commons.isAndroid ? 8 : 4), // align row on top of calendar's first row
+    
     },
     hidden: {
       opacity: 0
@@ -143,7 +144,7 @@ export default function styleConstructor(theme: Theme = {}) {
       paddingRight: 15,
       paddingLeft: 15,
       flexDirection: 'row',
-      justifyContent: 'space-around'
+      justifyContent: 'space-around',
     },
     dayContainer: {
       flex: 1,

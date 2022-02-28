@@ -187,7 +187,7 @@ export default function styleConstructor(theme: Theme = {}) {
       alignItems: 'center',
     },
     todayButtonText: {
-      color: "#fff",
+      color: "#F2F4F7",
       fontSize: commons.isTablet ? appStyle.todayButtonFontSize + 2 : appStyle.todayButtonFontSize,
       fontWeight: appStyle.todayButtonFontWeight,
       fontFamily: appStyle.todayButtonFontFamily

@@ -153,7 +153,7 @@ class CalendarProvider extends Component<Props> {
         >
           {/* <Animated.Image style={[this.style.todayButtonImage, {opacity}]} source={buttonIcon} /> */}
           <Animated.Text allowFontScaling={false} style={[this.style.todayButtonText, {opacity}]}>
-            {today}
+            
           </Animated.Text>
         </TouchableOpacity>
       </Animated.View>

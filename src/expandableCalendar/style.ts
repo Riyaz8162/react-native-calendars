@@ -176,7 +176,7 @@ export default function styleConstructor(theme: Theme = {}) {
       position: 'absolute',
       top: Platform.OS === "ios" ? 55 : 72,
       left:16,
-      bottom: 0
+      bottom: 0,
     },
     todayButton: {
       height: commons.isTablet ? 40 : 28,
@@ -187,7 +187,7 @@ export default function styleConstructor(theme: Theme = {}) {
       alignItems: 'center',
     },
     todayButtonText: {
-      color: "#3481F3",
+      color: "#fff",
       fontSize: commons.isTablet ? appStyle.todayButtonFontSize + 2 : appStyle.todayButtonFontSize,
       fontWeight: appStyle.todayButtonFontWeight,
       fontFamily: appStyle.todayButtonFontFamily

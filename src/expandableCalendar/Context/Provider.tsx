@@ -66,7 +66,6 @@ class CalendarProvider extends Component<Props> {
   };
 
   componentDidUpdate(prevProps: Props) {
-    console.log("this.props.date",this.props.date + " prevProps.date " +prevProps.date);
     
     if (this.props.date && prevProps.date !== this.props.date) {
       this.setDate(this.props.date, UpdateSources.PROP_UPDATE,);
@@ -175,6 +174,7 @@ export default CalendarProvider;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor:'plum'
   }
 });

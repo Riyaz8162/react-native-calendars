@@ -53,7 +53,9 @@ export default function (theme: Theme = {}) {
       textAlign: 'center',
       fontSize: 14,
       fontWeight: '600',
-      color: '#000'
+      color: '#000',
+      width:20,
+  
     },
     disabledDayHeader: {
       color: appStyle.textSectionTitleDisabledColor

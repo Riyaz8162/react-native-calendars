@@ -54,7 +54,7 @@ export default function (theme: Theme = {}) {
       fontSize: 14,
       fontWeight: '600',
       color: '#000',
-      width:20,
+       width:30,
   
     },
     disabledDayHeader: {

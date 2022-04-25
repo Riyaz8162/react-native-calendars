@@ -66,7 +66,7 @@ export default function styleConstructor(theme: Theme = {}, calendarHeight: numb
     eventTitle: {
       color: '#615B73',
       fontWeight: '600',
-      width:'80%',
+      width:'85%',
       ...theme.eventTitle
     },
     eventSummary: {

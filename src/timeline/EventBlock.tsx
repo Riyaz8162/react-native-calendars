@@ -66,14 +66,14 @@ const EventBlock = (props: EventBlockProps) => {
           <Text numberOfLines={1} style={styles.eventTitle}>
             {event.title || 'Event'}
           </Text>
-          {/* {numberOfLines > 1 ? (
+          {numberOfLines > 1 ? (
             <Text numberOfLines={numberOfLines - 1} style={[styles.eventSummary]}>
               {event.summary || ' '}
             </Text>
-          ) : null} */}
+          ) : null}
           {numberOfLines > 2 ? (
             <Text style={styles.eventTimes} numberOfLines={1}>
-              {event.start + "Min"}
+              {/* {event.start + "Min"} */}
               {/* {new XDate(event.start).toString(formatTime)} - {new XDate(event.end).toString(formatTime)} */}
             </Text>
           ) : null}

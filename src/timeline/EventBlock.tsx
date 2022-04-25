@@ -1,6 +1,7 @@
 import React, {useCallback, useMemo} from 'react';
-import {View, Text, TextStyle, TouchableOpacity, ViewStyle} from 'react-native';
+import {View, Text, TextStyle, TouchableOpacity, ViewStyle,Pressable} from 'react-native';
 import XDate from 'xdate';
+import moment from 'moment';
 
 export interface Event {
   id?: string;
@@ -35,8 +36,13 @@ const EventBlock = (props: EventBlockProps) => {
 
   // Fixing the number of lines for the event title makes this calculation easier.
   // However it would make sense to overflow the title to a new line if needed
-  const numberOfLines = Math.floor(event.height / TEXT_LINE_HEIGHT);
-  const formatTime = format24h ? 'HH:mm' : 'hh:mm A';
+ // console.log("Event start is ",event.start);
+  
+   const numberOfLines = Math.floor(event.height / TEXT_LINE_HEIGHT);
+   const formatTime = format24h ? 'HH:mm' : 'hh:mm';
+  // let eventStartDate =  moment(event?.start).format('DD MMM YYYY hh:mm:ss')
+  // let eventEndDate = moment(event?.end).format('DD MMM YYYY hh:mm:ss')
+  // var hoursDiff = eventEndDate.diff(eventStartDate, 'minutes');
   const eventStyle = useMemo(() => {
     return {
       left: event.left,
@@ -56,21 +62,22 @@ const EventBlock = (props: EventBlockProps) => {
       {renderEvent ? (
         renderEvent(event)
       ) : (
-        <View>
+        <Pressable  style={{flexDirection:'row'}}>
           <Text numberOfLines={1} style={styles.eventTitle}>
             {event.title || 'Event'}
           </Text>
-          {numberOfLines > 1 ? (
+          {/* {numberOfLines > 1 ? (
             <Text numberOfLines={numberOfLines - 1} style={[styles.eventSummary]}>
               {event.summary || ' '}
             </Text>
-          ) : null}
+          ) : null} */}
           {numberOfLines > 2 ? (
             <Text style={styles.eventTimes} numberOfLines={1}>
-              {new XDate(event.start).toString(formatTime)} - {new XDate(event.end).toString(formatTime)}
+              {event.start + "Min"}
+              {/* {new XDate(event.start).toString(formatTime)} - {new XDate(event.end).toString(formatTime)} */}
             </Text>
           ) : null}
-        </View>
+        </Pressable>
       )}
     </TouchableOpacity>
   );

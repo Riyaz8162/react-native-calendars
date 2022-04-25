@@ -232,7 +232,7 @@ export default class TimelineCalendarScreen extends Component {
     // start: 0,
     // end: 24,
     overlapEventsSpacing: 8,
-    rightEdgeSpacing:10,
+    rightEdgeSpacing:6,
   };
 
   render() {

@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useMemo, useRef} from 'react';
-import {View, ScrollView} from 'react-native';
+import {View, ScrollView,Alert} from 'react-native';
 import min from 'lodash/min';
 import map from 'lodash/map';
 
@@ -150,10 +150,15 @@ const Timeline = (props: TimelineProps) => {
   const _onEventPress = useCallback(
     (eventIndex: number) => {
       const event = packedEvents[eventIndex];
+      console.log("Event is",event);
+      
       if (eventTapped) {
         //TODO: remove after deprecation
+      //  Alert.alert("Clicked")
         eventTapped(event);
       } else {
+       // console.log("Prps is",props);
+        
         onEventPress?.(event);
       }
     },

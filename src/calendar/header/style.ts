@@ -24,7 +24,8 @@ export default function (theme: Theme = {}) {
       margin: 10
     },
     arrow: {
-
+      height:30,
+      marginTop:5,
       ...appStyle.arrowStyle
     },
     arrowImage: {

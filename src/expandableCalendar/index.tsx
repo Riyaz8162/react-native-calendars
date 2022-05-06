@@ -536,7 +536,6 @@ class ExpandableCalendar extends Component<ExpandableCalendarProps, State> {
     return (
       <View style={this.style.knobContainer} pointerEvents={'none'} testID={`${this.props.testID}-knob`}>
         <View style={this.style.knob} testID={CALENDAR_KNOB} />
-        <View style={{width:'100%',borderBottomColor:'#E0E0E0',borderBottomWidth:.8,marginTop:16}}/>  
       </View>
     );
   }

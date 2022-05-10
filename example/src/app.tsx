@@ -28,7 +28,7 @@ LocaleConfig.locales['en'] = {
     'December'
   ],
   monthNamesShort: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-  dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+  dayNames: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
   dayNamesShort: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
   // numbers: ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'] // number localization example
 };

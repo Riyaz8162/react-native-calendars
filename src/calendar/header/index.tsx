@@ -174,7 +174,7 @@ class CalendarHeader extends Component<CalendarHeaderProps> {
 
       return (
         <Text allowFontScaling={false} key={idx} style={dayStyle} numberOfLines={1} accessibilityLabel={''}>
-          {day}
+          {day.charAt(0)}
         </Text>
       );
     });

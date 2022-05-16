@@ -122,7 +122,7 @@ export default function styleConstructor(theme: Theme = {}, calendarHeight: numb
     },
     timeLabel: {
       position: 'absolute',
-      color: 'rgb(170,170,170)',
+      color: '#000000',
       fontSize: 10,
       fontFamily: Platform.OS === 'ios' ? 'Helvetica Neue' : 'Roboto',
       fontWeight: '500',

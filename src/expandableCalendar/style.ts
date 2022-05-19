@@ -13,7 +13,7 @@ export default function styleConstructor(theme: Theme = {}) {
 
   return StyleSheet.create({
     containerShadow: {
-      backgroundColor: appStyle.OurAppTheme,
+     // backgroundColor: appStyle.OurAppTheme,
       ...Platform.select({
         ios: {
           shadowColor: '#fff',
@@ -42,7 +42,6 @@ export default function styleConstructor(theme: Theme = {}) {
       paddingBottom: 6
     },
     container: {
-      // backgroundColor: appStyle.OurAppTheme,
       flex: 1
     },
     knobContainer: {
@@ -151,7 +150,6 @@ export default function styleConstructor(theme: Theme = {}) {
     dayContainer: {
       flex: 1,
       alignItems: 'center',
-      // backgroundColor:appStyle.OurAppTheme,
     },
     emptyDayContainer: {
       flex: 1

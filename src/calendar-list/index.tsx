@@ -327,7 +327,7 @@ class CalendarList extends Component<CalendarListProps, State> {
 
     return (
       <View style={this.style.flatListContainer}>
-        {/* <FlatList
+        <FlatList
           ref={this.list}
           style={[this.style.container, style]}
           // @ts-expect-error
@@ -351,7 +351,7 @@ class CalendarList extends Component<CalendarListProps, State> {
           keyExtractor={this.props.keyExtractor}
           onEndReachedThreshold={this.props.onEndReachedThreshold}
           onEndReached={this.props.onEndReached}
-        /> */}
+        />
         {this.renderStaticHeader()}
       </View>
     );

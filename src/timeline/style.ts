@@ -40,13 +40,13 @@ export default function styleConstructor(theme: Theme = {}, calendarHeight: numb
     arrow: {
       width: 15,
       height: 15,
-      resizeMode: 'contain'
+      resizeMode:'contain'
     },
     arrowButton: {
-      width: 50,
+      width: 80,
       alignItems: 'center',
       justifyContent: 'center',
-      ...theme.arrowButton
+      ...theme.arrowButton,
     },
     event: {
       position: 'absolute',
@@ -78,23 +78,23 @@ export default function styleConstructor(theme: Theme = {}, calendarHeight: numb
     },
     eventTimes: {
       marginTop: 3,
-      fontSize: 10,
+      fontSize: 11,
       fontWeight: 'bold',
       color: '#615B73',
       flexWrap: 'wrap',
       ...theme.eventTimes
     },
     line: {
-      height: 1,
+      height: 0.8,
       position: 'absolute',
-      left: HOURS_SIDEBAR_WIDTH - 16,
-      backgroundColor: 'rgb(216,216,216)',
+      left: HOURS_SIDEBAR_WIDTH - 10,
+      backgroundColor: '#EEEEF3',
       ...theme.line
     },
     verticalLine: {
       position: 'absolute',
       width: 1,
-      height: '105%',
+     // height: '105%',
       backgroundColor: 'rgb(216,216,216)',
       left: HOURS_SIDEBAR_WIDTH
     },

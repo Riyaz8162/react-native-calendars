@@ -2,7 +2,7 @@ import values from 'lodash/values';
 import PropTypes from 'prop-types';
 
 import React, {Component, Fragment} from 'react';
-import {TouchableOpacity, Text, View} from 'react-native';
+import {TouchableOpacity, Text, View, Pressable} from 'react-native';
 
 import {Theme, DayState, MarkingTypes, DateData} from '../../../types';
 import {shouldUpdate} from '../../../componentUpdater';
@@ -207,14 +207,11 @@ export default class BasicDay extends Component<BasicDayProps> {
   }
 
   renderContainer() {
-    const {activeOpacity} = this.marking;
-
     return (
-      <TouchableOpacity
+      <Pressable
         testID={this.props.testID}
         style={this.getContainerStyle()}
         disabled={this.shouldDisableTouchEvent()}
-        activeOpacity={activeOpacity}
         onPress={!this.shouldDisableTouchEvent() ? this.onPress : undefined}
         onLongPress={!this.shouldDisableTouchEvent() ? this.onLongPress : undefined}
         accessible
@@ -222,7 +219,7 @@ export default class BasicDay extends Component<BasicDayProps> {
         accessibilityLabel={this.props.accessibilityLabel}
       >
         {this.isMultiPeriod() ? this.renderText() : this.renderContent()}
-      </TouchableOpacity>
+      </Pressable>
     );
   }
 

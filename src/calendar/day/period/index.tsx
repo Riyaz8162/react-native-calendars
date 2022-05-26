@@ -2,7 +2,7 @@ import isEqual from 'lodash/isEqual';
 import PropTypes from 'prop-types';
 
 import React, {Component} from 'react';
-import {TouchableWithoutFeedback, Text, View, ViewStyle} from 'react-native';
+import {TouchableWithoutFeedback, Text, View, ViewStyle, Pressable} from 'react-native';
 
 import {Theme, DayState, DateData} from '../../../types';
 import {shouldUpdate} from '../../../componentUpdater';
@@ -219,7 +219,7 @@ export default class PeriodDay extends Component<PeriodDayProps> {
 
     // TODO: refactor - allow feedback for unmarked days
     return (
-      <TouchableWithoutFeedback
+      <Pressable
         testID={testID}
         onPress={this.onPress}
         onLongPress={this.onLongPress}
@@ -238,7 +238,7 @@ export default class PeriodDay extends Component<PeriodDayProps> {
             <Dot theme={theme} color={marking?.dotColor} marked={marking?.marked} />
           </View>
         </View>
-      </TouchableWithoutFeedback>
+      </Pressable>
     );
   }
 }

@@ -15,7 +15,8 @@ export default function styleConstructor(theme: Theme = {}, calendarHeight: numb
     contentStyle: {
       backgroundColor: '#ffff',
       height: calendarHeight + 10,
-      ...theme.contentStyle
+      ...theme.contentStyle,
+      marginBottom:60,
     },
     header: {
       paddingHorizontal: 30,
@@ -50,7 +51,7 @@ export default function styleConstructor(theme: Theme = {}, calendarHeight: numb
     event: {
       position: 'absolute',
       backgroundColor: '#F0F4FF',
-      borderColor: '#DDE5FD',
+      borderColor: 'transparent',
       borderWidth: 1,
       paddingLeft: 4,
       minHeight: 25,

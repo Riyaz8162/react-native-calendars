@@ -62,7 +62,7 @@ const EventBlock = (props: EventBlockProps) => {
       {renderEvent ? (
         renderEvent(event)
       ) : (
-        <Pressable  style={{flexDirection:'row'}}>
+        <Pressable  style={{flexDirection:'row',width:'100%',justifyContent:'space-between',}}>
           <Text numberOfLines={1} style={styles.eventTitle}>
             {event.title || 'Event'}
           </Text>
@@ -71,12 +71,12 @@ const EventBlock = (props: EventBlockProps) => {
               {event.summary || ' '}
             </Text>
           ) : null}
-          {numberOfLines > 2 ? (
+          {numberOfLines > 8 ? (
             <Text style={styles.eventTimes} numberOfLines={1}>
               {/* {event.start + "Min"} */}
               {/* {new XDate(event.start).toString(formatTime)} - {new XDate(event.end).toString(formatTime)} */}
-            </Text>
-          ) : null}
+             </Text>
+          ) : null} 
         </Pressable>
       )}
     </TouchableOpacity>

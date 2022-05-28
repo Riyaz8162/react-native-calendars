@@ -62,7 +62,7 @@ const EventBlock = (props: EventBlockProps) => {
       {renderEvent ? (
         renderEvent(event)
       ) : (
-        <Pressable  style={{flexDirection:'row',width:'100%',justifyContent:'space-between',}}>
+        <Pressable  style={{flexDirection:'row',width:'100%',justifyContent:'space-around',}}>
           <Text numberOfLines={1} style={styles.eventTitle}>
             {event.title || 'Event'}
           </Text>

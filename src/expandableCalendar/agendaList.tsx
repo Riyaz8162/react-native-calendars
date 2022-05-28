@@ -77,7 +77,7 @@ class AgendaList extends Component<AgendaListProps> {
   };
 
   static defaultProps = {
-    dayFormat: 'd MMM yyyy ',
+    dayFormat: 'd MMM yyyy',
     stickySectionHeadersEnabled: true,
     markToday: true,
     istoday: false

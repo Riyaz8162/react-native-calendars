@@ -223,8 +223,8 @@ class CalendarHeader extends Component<CalendarHeaderProps> {
       <TouchableOpacity
         onPress={!shouldDisable ? onPress : undefined}
         disabled={shouldDisable}
-        style={this.style.arrow}
-        hitSlop={{left: 20, right: 20, top: 20, bottom: 20}}
+        style={direction === 'left' ?this.style.arrow : this.style.arrowRight}
+        hitSlop={{left: 30, right:30, top:30, bottom: 30}}
         testID={testId}
       >
         {renderArrow ? (

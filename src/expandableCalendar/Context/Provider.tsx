@@ -150,6 +150,7 @@ class CalendarProvider extends Component<Props> {
           style={[this.style.todayButton, this.props.todayButtonStyle]}
           onPress={this.onTodayPress}
           disabled={disabled}
+          hitSlop={{top:20,bottom:20,right:20,left:20,}}
         >
           {/* <Animated.Image style={[this.style.todayButtonImage, {opacity}]} source={buttonIcon} /> */}
           <Animated.Text allowFontScaling={false} style={[this.style.todayButtonText, {opacity}]}>

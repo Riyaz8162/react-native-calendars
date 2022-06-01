@@ -172,7 +172,7 @@ export default function styleConstructor(theme: Theme = {}) {
     todayButtonContainer: {
       alignItems: appStyle.todayButtonPosition === 'right' ? 'flex-end' : 'flex-start',
       position: 'absolute',
-      top: Platform.OS === "ios" ? 55 : 72,
+      top: Platform.OS === "ios" ? 55 :  commons.isTablet ? 72 :10,
       left:16,
       bottom: 0,
     },

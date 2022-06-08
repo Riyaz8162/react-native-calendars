@@ -58,11 +58,11 @@ const EventBlock = (props: EventBlockProps) => {
   }, [index, onPress]);
 
   return (
-    <TouchableOpacity activeOpacity={0.9} onPress={_onPress} style={[styles.event, eventStyle]}>
+    <TouchableOpacity activeOpacity={0.9}  >
       {renderEvent ? (
         renderEvent(event)
       ) : (
-        <Pressable  style={{flexDirection:'row',width:'100%',justifyContent:'space-around',}}>
+        event.title !== undefined || null &&<Pressable onPress={_onPress} style={[styles.event, eventStyle,{flexDirection:'row',width:'100%',justifyContent:'space-around',}]}>
           <Text numberOfLines={1} style={styles.eventTitle}>
             {event.title || 'Event'}
           </Text>

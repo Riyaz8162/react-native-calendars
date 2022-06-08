@@ -87,7 +87,7 @@ export default function styleConstructor(theme: Theme = {}, calendarHeight: numb
     line: {
       height: 0.8,
       position: 'absolute',
-      left: HOURS_SIDEBAR_WIDTH - 10,
+      left: HOURS_SIDEBAR_WIDTH - 5,
       backgroundColor: '#EEEEF3',
       ...theme.line
     },
@@ -124,12 +124,12 @@ export default function styleConstructor(theme: Theme = {}, calendarHeight: numb
     timeLabel: {
       position: 'absolute',
       color: '#000000',
-      fontSize: 10,
-      fontFamily: Platform.OS === 'ios' ? 'Helvetica Neue' : 'Roboto-Regular',
-      fontWeight: '800',
-      paddingLeft: 12,
+      fontSize:12,
+      fontFamily: Platform.OS === 'ios' ? 'Helvetica Neue' : 'Roboto-Black',
+      fontWeight: '700',
+      paddingLeft: 10,
       textAlign: 'center',
-      width: HOURS_SIDEBAR_WIDTH - 16,
+      width: HOURS_SIDEBAR_WIDTH - 4,
       ...theme.timeLabel
     }
   });

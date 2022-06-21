@@ -34,6 +34,10 @@ export default function styleConstructor(theme: Theme = {}) {
       backgroundColor:"#3481F3",
       borderRadius:3
     },
+    holidayView: {
+      backgroundColor:"green",
+      borderRadius:3
+    },
     today: {
       backgroundColor: appStyle.AppTodayTheme,
       borderColor:'#3481F3',
@@ -50,6 +54,10 @@ export default function styleConstructor(theme: Theme = {}) {
     },
     inactiveText: {
       color: appStyle.textInactiveColor
+    },
+    holidayText:{
+      color:'#E08316',
+      fontWeight:'700'
     },
     dot: {
       width: 4,

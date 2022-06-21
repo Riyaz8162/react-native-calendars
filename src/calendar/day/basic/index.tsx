@@ -2,7 +2,7 @@ import values from 'lodash/values';
 import PropTypes from 'prop-types';
 
 import React, {Component, Fragment} from 'react';
-import {TouchableOpacity, Text, View, Pressable} from 'react-native';
+import {Text, View, Pressable} from 'react-native';
 
 import {Theme, DayState, MarkingTypes, DateData} from '../../../types';
 import {shouldUpdate} from '../../../componentUpdater';
@@ -39,7 +39,7 @@ export default class BasicDay extends Component<BasicDayProps> {
   static displayName = 'BasicDay';
 
   static propTypes = {
-    state: PropTypes.oneOf(['selected', 'disabled', 'inactive', 'today', '']),
+    state: PropTypes.oneOf(['selected', 'disabled', 'inactive', 'today', '','activeHoliday']),
     marking: PropTypes.any,
     markingType: PropTypes.oneOf(values(Marking.markings)),
     theme: PropTypes.object,
@@ -104,6 +104,10 @@ export default class BasicDay extends Component<BasicDayProps> {
     return this.marking?.inactive;
   }
 
+  isHoliday(){
+    return this.marking.activeHoliday;
+  }
+
   isToday() {
     return this.props.state === 'today';
   }
@@ -121,16 +125,19 @@ export default class BasicDay extends Component<BasicDayProps> {
   }
 
   getContainerStyle() {
-    const {customStyles, selectedColor} = this.marking;
+    const {customStyles, selectedColor,activeHoliday} = this.marking;
     const style: object[] = [this.style.base];
 
     if (this.isSelected()) {
       style.push(this.style.selected);
-      if (selectedColor) {
+      if (selectedColor && !activeHoliday) {
         style.push({backgroundColor: selectedColor});
       }
     } else if (this.isToday()) {
       style.push(this.style.today);
+    }
+    else if(this.isHoliday()){
+      style.push({backgroundColor: '#FFF1E0'});
     }
 
     //Custom marking type
@@ -140,7 +147,6 @@ export default class BasicDay extends Component<BasicDayProps> {
       }
       style.push(customStyles.container);
     }
-
     return style;
   }
 
@@ -159,6 +165,9 @@ export default class BasicDay extends Component<BasicDayProps> {
       style.push(this.style.todayText);
     } else if (this.isInactive()) {
       style.push(this.style.inactiveText);
+    }
+    else if(this.isHoliday()){
+      style.push(this.style.holidayText);
     }
 
     //Custom marking type
@@ -181,6 +190,7 @@ export default class BasicDay extends Component<BasicDayProps> {
         selected={this.isSelected()}
         disabled={this.isDisabled()}
         inactive={this.isInactive()}
+        activeHoliday={this.isHoliday()}
         today={this.isToday()}
         dotColor={dotColor}
         dots={dots}

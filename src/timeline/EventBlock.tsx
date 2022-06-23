@@ -62,7 +62,8 @@ const EventBlock = (props: EventBlockProps) => {
       {renderEvent ? (
         renderEvent(event)
       ) : (
-        event.title !== undefined || null &&<Pressable onPress={_onPress} style={[styles.event, eventStyle,{flexDirection:'row',width:'100%',justifyContent:'space-around',}]}>
+        event.title  ?
+        <Pressable onPress={_onPress} style={[styles.event, eventStyle,{flexDirection:'row',width:'100%',justifyContent:'space-around',}]}>
           <Text numberOfLines={1} style={styles.eventTitle}>
             {event.title || 'Event'}
           </Text>
@@ -77,7 +78,7 @@ const EventBlock = (props: EventBlockProps) => {
               {/* {new XDate(event.start).toString(formatTime)} - {new XDate(event.end).toString(formatTime)} */}
              </Text>
           ) : null} 
-        </Pressable>
+        </Pressable> : null
       )}
     </TouchableOpacity>
   );

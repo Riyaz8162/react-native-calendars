@@ -318,8 +318,8 @@ class ExpandableCalendar extends Component<ExpandableCalendarProps, State> {
   };
   handlePanResponderMove = (_: GestureResponderEvent, gestureState: PanResponderGestureState) => {
     // limit min height to closed height
-    this._wrapperStyles.style.height = Math.max(this.closedHeight, this._height + gestureState.dy);
-
+   // this._wrapperStyles.style.height = Math.max(this.closedHeight, this._height + gestureState.dy);
+   this._wrapperStyles.style.height = 220;
     if (!this.props.horizontal) {
       // vertical CalenderList header
       this._headerStyles.style.top = Math.min(Math.max(-gestureState.dy, -HEADER_HEIGHT), 0);

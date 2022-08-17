@@ -14,7 +14,7 @@ export default function styleConstructor(theme: Theme = {}, calendarHeight: numb
     },
     contentStyle: {
       backgroundColor: '#ffff',
-      height: calendarHeight + 10,
+      height: calendarHeight + 450,
       ...theme.contentStyle,
       marginBottom:60,
     },
